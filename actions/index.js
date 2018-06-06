@@ -15,19 +15,19 @@ function addRow (ev) {
   });
 }
 
-function changeCell (ctx, rowIndex, columnIndex, ev) {
+function changeCell (rowIndex, columnIndex, ev) {
 }
 
-function focusCell (ctx, rowIndex, columnIndex) {
+function focusCell (rowIndex, columnIndex) {
 }
 
-function blurCell (ctx) {
+function blurCell () {
 }
 
-function removeRow (ctx, ev) {
+function removeRow (ev) {
 }
 
-function removeColumn (ctx, ev) {
+function removeColumn (ev) {
 }
 
 export default {
