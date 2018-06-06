@@ -1,24 +1,33 @@
 'use strict';
 
 function addColumn (ev) {
+  ev.preventDefault();
+  this.setState({
+    table: this.state.table.map(row => [...row, ''])
+  });
 }
 
 function addRow (ev) {
+  ev.preventDefault();
+  length = this.state.table[0].length
+  this.setState({
+    table: ...this.state.table.push(new Array(length))
+  });
 }
 
-function changeCell (rowIndex, columnIndex, ev) {
+function changeCell (ctx, rowIndex, columnIndex, ev) {
 }
 
-function focusCell (rowIndex, columnIndex) {
+function focusCell (ctx, rowIndex, columnIndex) {
 }
 
-function blurCell () {
+function blurCell (ctx) {
 }
 
-function removeRow (ev) {
+function removeRow (ctx, ev) {
 }
 
-function removeColumn (ev) {
+function removeColumn (ctx, ev) {
 }
 
 export default {

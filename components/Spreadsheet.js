@@ -7,7 +7,13 @@ import Table from './Table';
 export default class Spreadsheet extends React.Component {
   constructor (props) {
     super(props);
-    this.state = {};
+    this.state = {
+      table: [[null]],
+      focused: null,
+    };
+    
+    this.addColumn = () => addColumn(this)
+    this.addRow = () => addRow(this)
   }
 
   render () {
@@ -16,7 +22,7 @@ export default class Spreadsheet extends React.Component {
         <h1>My little spreadsheet</h1>
 
         <div className='spreadsheet__buttons'>
-          <button>Add Column</button>
+          <button onClick={this.addColumn}>Add Column</button>
           {' '}
           <button>Add Row</button>
           {' '}
@@ -25,9 +31,10 @@ export default class Spreadsheet extends React.Component {
           <button>Remove Row</button>
         </div>
 
-        <Table />
+        <Table table={this.state.table} />
 
         <div className='spreadsheet__focused'>
+          {this.state.focus}
         </div>
       </div>
     );
